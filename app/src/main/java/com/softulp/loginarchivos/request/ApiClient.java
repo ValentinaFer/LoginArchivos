@@ -31,8 +31,8 @@ public class ApiClient {
         archivoUsuario = conectar(context);
 
         //try-with-resources: FileOutputStream y ObjectOutputStream implementan
-        //las interfaces AutoCloseable, por lo que utilizando un try-with-resources
-        //aunque suceda una exception, el 'try-catch' se encargará de cerrarlo
+        //las interfaces AutoCloseable, por lo que utilizo un try-with-resources.
+        //aunque suceda una exception, el 'try-catch' se encargará de cerrarlo y catchear la exception
         try (FileOutputStream fos = new FileOutputStream(archivoUsuario, false);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(usuario);
